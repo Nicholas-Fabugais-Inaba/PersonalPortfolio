@@ -16,7 +16,7 @@ const trips: Trip[] = [
     id: 1,
     destination: 'Japan',
     years: [2025],
-    image: 'https://images.pexels.com/photos/402028/pexels-photo-402028.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/D485C125-2EA2-49CF-95A4-40072F916F1A.JPG',
     description: 'An unforgettable journey through ancient temples and modern cities',
     highlights: ['Tokyo', 'Yokohama', 'Kyoto', 'Uji', 'Nara', 'Osaka', 'Kobe', 'Okayama', 'Hiroshima'],
   },
@@ -24,7 +24,7 @@ const trips: Trip[] = [
     id: 2,
     destination: 'Italy',
     years: [2025],
-    image: 'https://images.pexels.com/photos/2422461/pexels-photo-2422461.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/5F1A7896-D3DE-4105-AFD1-8BEF259F100C_4_5005_c.jpeg',
     description: 'Renaissance art, incredible cuisine, and timeless beauty',
     highlights: ['Florence', 'Rome', 'Positano', 'Amalfi'],
   },
@@ -32,7 +32,7 @@ const trips: Trip[] = [
     id: 3,
     destination: 'Seoul',
     years: [2025],
-    image: 'https://images.pexels.com/photos/237211/pexels-photo-237211.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/54F90B1A-90E6-4A13-9B59-DC737A9546CD_1_201_a.jpeg',
     description: 'Where tradition meets cutting-edge technology',
     highlights: ['Myeongdong', 'DMZ', 'Namsan'],
   },
@@ -40,7 +40,7 @@ const trips: Trip[] = [
     id: 4,
     destination: 'Philippines',
     years: [2025],
-    image: 'https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/4B9369B3-0E09-4461-B56D-E57B3235453C_1_201_a.jpeg',
     description: 'Tropical paradise with pristine beaches and vibrant culture',
     highlights: ['Boracay', 'Cebu', 'El Nido', 'Manila'],
   },
@@ -48,7 +48,7 @@ const trips: Trip[] = [
     id: 5,
     destination: 'Maine',
     years: [2025],
-    image: 'https://images.pexels.com/photos/1583582/pexels-photo-1583582.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/35B2FD12-FD0F-4E28-9C50-84FF3B0009BE_1_105_c.jpeg',
     description: 'Rugged coastlines and charming coastal towns',
     highlights: ['Cape Elizabeth', 'Old Orchard Beach', 'Portland'],
   },
@@ -227,6 +227,7 @@ const Trips = () => {
       {selectedTrip && (
         <TripGallery
           destination={selectedTrip}
+          image={trips.find((t) => t.destination === selectedTrip)?.image || ''}
           onClose={() => setSelectedTrip(null)}
         />
       )}

@@ -44,8 +44,12 @@ const About = () => {
               </div>
               <div className="text-center p-4 bg-slate-50 rounded-lg">
                 <MapPin className="mx-auto mb-2 text-slate-700" size={24} />
-                <p className="text-2xl font-bold text-gray-900">🇨🇦🇯🇵🇵🇭</p>
-                <p className="text-sm text-gray-600">Heritage</p>
+                <div className="flex flex-col gap-1 text-sm font-medium text-gray-900">
+                  <span>Japanese</span>
+                  <span>Filipino</span>
+                  <span>Canadian</span>
+                </div>
+                <p className="text-sm text-gray-600 mt-2">Heritage</p>
               </div>
             </div>
           </div>

@@ -23,36 +23,28 @@ const About = () => {
             </div>
 
             <div className="mt-8 grid grid-cols-3 gap-4">
-              <div className="text-center p-4 bg-slate-50 rounded-lg flex flex-col items-center justify-between min-h-[140px]">
-                <Globe className="text-slate-700 mb-2" size={24} />
-                <div className="flex-1 flex flex-col items-center justify-center">
-                  <p className="text-2xl font-bold text-gray-900">13</p>
-                </div>
+              <div className="text-center p-4 bg-slate-50 rounded-lg">
+                <Globe className="mx-auto mb-2 text-slate-700" size={24} />
+                <p className="text-2xl font-bold text-gray-900">13</p>
                 <p className="text-sm text-gray-600">Countries Visited</p>
               </div>
-              <div className="text-center p-4 bg-slate-50 rounded-lg flex flex-col items-center justify-between min-h-[140px]">
-                <Zap className="text-slate-700 mb-2" size={24} />
-                <div className="flex-1 flex flex-col items-center justify-center">
-                  <p className="text-2xl font-bold text-gray-900">{(() => {
-                    const birthday = new Date(2002, 2, 28);
-                    const today = new Date();
-                    let age = today.getFullYear() - birthday.getFullYear();
-                    const monthDiff = today.getMonth() - birthday.getMonth();
-                    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthday.getDate())) {
-                      age--;
-                    }
-                    return age;
-                  })()}</p>
-                </div>
+              <div className="text-center p-4 bg-slate-50 rounded-lg">
+                <Zap className="mx-auto mb-2 text-slate-700" size={24} />
+                <p className="text-2xl font-bold text-gray-900">{(() => {
+                  const birthday = new Date(2002, 2, 28);
+                  const today = new Date();
+                  let age = today.getFullYear() - birthday.getFullYear();
+                  const monthDiff = today.getMonth() - birthday.getMonth();
+                  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthday.getDate())) {
+                    age--;
+                  }
+                  return age;
+                })()}</p>
                 <p className="text-sm text-gray-600">EXP Level</p>
               </div>
-              <div className="text-center p-4 bg-slate-50 rounded-lg flex flex-col items-center justify-between min-h-[140px]">
-                <MapPin className="text-slate-700 mb-2" size={24} />
-                <div className="flex-1 flex flex-col items-center justify-center gap-1 text-sm font-medium text-gray-900">
-                  <span>Japanese</span>
-                  <span>Filipino</span>
-                  <span>Canadian</span>
-                </div>
+              <div className="text-center p-4 bg-slate-50 rounded-lg">
+                <MapPin className="mx-auto mb-2 text-slate-700" size={24} />
+                <p className="text-2xl font-bold text-gray-900">🇨🇦🇯🇵🇵🇭</p>
                 <p className="text-sm text-gray-600">Heritage</p>
               </div>
             </div>

@@ -181,13 +181,13 @@ const Trips = () => {
               <button
                 key={trip.id}
                 onClick={() => setSelectedTrip(trip.destination)}
-                className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-left cursor-pointer"
+                className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-left cursor-pointer flex flex-col"
               >
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-64 overflow-hidden flex-shrink-0">
                   <img
                     src={trip.image}
                     alt={trip.destination}
-                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                    className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full flex items-center gap-1 shadow-md">
                     <Calendar size={14} className="text-gray-600" />

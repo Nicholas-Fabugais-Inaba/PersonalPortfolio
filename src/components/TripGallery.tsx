@@ -14,6 +14,13 @@ const galleryImages: Record<string, string[]> = {
     '/2D99A38E-FC80-4637-83D0-464C59A25274.JPG',
     '/E02761DC-FFB9-4D59-B173-81CF1D7A49FC.JPG',
   ],
+  'Italy': [
+    '/373B610B-25FC-44CB-8127-43E9A585FAC1.JPG',
+    '/3E06FBE0-6B6D-4096-B1DF-EDAA901C57CA.JPG',
+    '/53903233-A8D1-4C4B-B222-E21DDBE00EBE_1_201_a.jpeg',
+    '/3A9D9481-4B5E-4E73-99E9-A93D3BF47F1D_1_201_a.jpeg',
+    '/5F1A7896-D3DE-4105-AFD1-8BEF259F100C_4_5005_c.jpeg',
+  ],
 };
 
 const TripGallery = ({ destination, image, onClose }: TripGalleryProps) => {

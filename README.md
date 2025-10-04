@@ -1,4 +1,4 @@
-# Nicholas Fi - Travel Portfolio
+# Nicholas Fabugais-Inaba - Travel Portfolio
 
 A modern, interactive portfolio showcasing my travels around the world through stunning photography and immersive galleries.
 
@@ -31,23 +31,10 @@ This portfolio highlights my adventures across multiple continents, featuring cu
 - **Maine** - Coastal beauty and natural landscapes
 - And more adventures to come...
 
-## Development
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-```
-
 ## Contact
 
-- Email: finicholascj@gmail.com
-- LinkedIn: linkedin.com/in/nicholas-fi
+- Email: nfabugaisinaba@gmail.com
+- LinkedIn: [linkedin.com/in/nicholas-fi](https://www.linkedin.com/in/nicholas-fabugais-inaba/)
 
 ---
 

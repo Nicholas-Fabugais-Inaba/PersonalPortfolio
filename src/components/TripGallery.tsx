@@ -21,6 +21,13 @@ const galleryImages: Record<string, string[]> = {
     '/3A9D9481-4B5E-4E73-99E9-A93D3BF47F1D_1_201_a.jpeg',
     '/5F1A7896-D3DE-4105-AFD1-8BEF259F100C_4_5005_c.jpeg',
   ],
+  'Seoul': [
+    '/seoul-gallery/D5EC211A-D7BB-407E-8934-BCA41BAB9ABD.JPG',
+    '/seoul-gallery/C4BDDE17-0E8F-4E63-8BCE-88A7BD204E4E.JPG',
+    '/seoul-gallery/DAF5BD08-85B7-4C1C-9EF5-62085EF3CEC4.JPG',
+    '/seoul-gallery/16D9DFC9-3738-42C3-8996-B71CBFB4E340.JPG',
+    '/seoul-gallery/EDB507CF-9A61-4E21-AF0E-2D3E80A976F2_1_105_c.jpeg',
+  ],
 };
 
 const TripGallery = ({ destination, image, onClose }: TripGalleryProps) => {

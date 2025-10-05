@@ -28,6 +28,19 @@ const galleryImages: Record<string, string[]> = {
     '/seoul-gallery/16D9DFC9-3738-42C3-8996-B71CBFB4E340.JPG',
     '/seoul-gallery/EDB507CF-9A61-4E21-AF0E-2D3E80A976F2_1_105_c.jpeg',
   ],
+  'Philippines': [
+    '/philippines-gallery/1BB5B73D-3B25-4EA6-8971-FD4C604BD89A_1_102_o.jpeg',
+    '/philippines-gallery/39725F80-8673-4B40-8CFB-D67486B05055.JPG',
+    '/philippines-gallery/6F20C516-FCA8-45FE-B884-CCB9EE1B0AAD_1_201_a.jpeg',
+    '/philippines-gallery/9FE0E8D0-3BE4-4BC7-B8FA-5A6E080C26D4_1_105_c.jpeg',
+    '/philippines-gallery/B6A05F3A-48A3-442C-811A-9A8C98415858_1_201_a.jpeg',
+  ],
+  'Maine': [
+    '/maine-gallery/663C9B14-626A-4D6F-BCC3-CB80B1A0875B_1_105_c.jpeg',
+    '/maine-gallery/12649CF4-499F-467C-A832-536962898AF1_1_105_c.jpeg',
+    '/maine-gallery/116D765C-6167-4174-A553-D0694E05D97A_1_105_c.jpeg',
+    '/maine-gallery/C831CAB3-B18A-42F6-97E4-8481AB384095_1_105_c.jpeg',
+  ],
 };
 
 const TripGallery = ({ destination, image, onClose }: TripGalleryProps) => {

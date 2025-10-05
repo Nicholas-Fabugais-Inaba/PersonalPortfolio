@@ -17,7 +17,7 @@ const trips: Trip[] = [
     destination: 'Japan',
     years: [2025],
     image: '/D485C125-2EA2-49CF-95A4-40072F916F1A.JPG',
-    description: 'An unforgettable journey through ancient temples and modern cities',
+    description: 'Visiting my first country in Asia with amazing food, culture, and history',
     highlights: ['Tokyo', 'Yokohama', 'Kyoto', 'Uji', 'Nara', 'Osaka', 'Kobe', 'Okayama', 'Hiroshima'],
   },
   {
@@ -25,15 +25,15 @@ const trips: Trip[] = [
     destination: 'Italy',
     years: [2025],
     image: '/5F1A7896-D3DE-4105-AFD1-8BEF259F100C_4_5005_c.jpeg',
-    description: 'Renaissance art, incredible cuisine, and timeless beauty',
-    highlights: ['Florence', 'Rome', 'Positano', 'Amalfi'],
+    description: 'Incredible food, driving along the Amalfi coast, and watching Pope Leo XIV elected in person',
+    highlights: ['Florence', 'Rome', 'Vatican City', 'Positano', 'Amalfi'],
   },
   {
     id: 3,
     destination: 'Seoul',
     years: [2025],
     image: '/54F90B1A-90E6-4A13-9B59-DC737A9546CD_1_201_a.jpeg',
-    description: 'Where tradition meets cutting-edge technology',
+    description: 'Roamed the streets of Myeongdong, learnt about the Korean war on the DMZ tour, and experienced a spa treatment',
     highlights: ['Myeongdong', 'DMZ', 'Namsan'],
   },
   {
@@ -49,7 +49,7 @@ const trips: Trip[] = [
     destination: 'Maine',
     years: [2025],
     image: '/35B2FD12-FD0F-4E28-9C50-84FF3B0009BE_1_105_c.jpeg',
-    description: 'Rugged coastlines and charming coastal towns',
+    description: 'Solo road trip to see coastal towns and eat delicious lobster rolls',
     highlights: ['Cape Elizabeth', 'Old Orchard Beach', 'Portland'],
   },
   {

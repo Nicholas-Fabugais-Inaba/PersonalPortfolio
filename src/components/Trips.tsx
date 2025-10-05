@@ -105,7 +105,7 @@ const trips: Trip[] = [
     destination: 'British Columbia',
     years: [2023],
     image: '/92881976-35EA-45F4-A648-E18B85EDCB77.JPG',
-    description: 'Breathtaking landscapes and outdoor adventures',
+    description: 'Surfing in Tofino, breathtaking mountain landscapes, and attending my Japanese-side\'s family reunion',
     highlights: ['Tofino', 'Vancouver', 'Victoria'],
   },
   {

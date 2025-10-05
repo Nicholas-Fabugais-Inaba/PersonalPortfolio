@@ -41,6 +41,13 @@ const galleryImages: Record<string, string[]> = {
     '/maine-gallery/116D765C-6167-4174-A553-D0694E05D97A_1_105_c.jpeg',
     '/maine-gallery/C831CAB3-B18A-42F6-97E4-8481AB384095_1_105_c.jpeg',
   ],
+  'Boston': [
+    '/boston-gallery/326DBE77-879D-4CFC-8491-26D513698F04_1_105_c.jpeg',
+    '/boston-gallery/BF8880DD-A683-4B5B-9AEC-13408AEEB8CB_1_105_c.jpeg',
+    '/boston-gallery/C548F8B1-0954-4DD0-89A0-8D273DA78367_1_105_c.jpeg',
+    '/boston-gallery/5141BB41-4AF4-42BB-9F2A-28C292C7241C_4_5005_c.jpeg',
+    '/boston-gallery/2CB6F4FC-7815-45B0-9B38-CC1BD3678ACB_1_105_c.jpeg',
+  ],
 };
 
 const TripGallery = ({ destination, image, onClose }: TripGalleryProps) => {

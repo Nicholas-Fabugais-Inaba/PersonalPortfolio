@@ -55,6 +55,12 @@ const galleryImages: Record<string, string[]> = {
     '/montreal-gallery/16BEFAED-EFE6-44A4-B966-B5A713DDF976_1_105_c.jpeg',
     '/montreal-gallery/2BF56154-CF5F-4372-93E6-6B15BFE8EDB6_1_105_c.jpeg',
   ],
+  'Punta Cana': [
+    '/punta-cana-gallery/ae7230f4-ec32-40af-8018-01c7a72ba58d_1_105_c.jpeg',
+    '/punta-cana-gallery/4e8f57ce-d689-42a8-a220-21a11e067217_1_105_c.jpeg',
+    '/punta-cana-gallery/bcfa1425-e441-429a-bbf9-4cfd81a254bf_1_105_c.jpeg',
+    '/punta-cana-gallery/89a011fe-bc1d-481c-950a-b58ec9abccaa.jpg',
+  ],
 };
 
 const TripGallery = ({ destination, image, onClose }: TripGalleryProps) => {

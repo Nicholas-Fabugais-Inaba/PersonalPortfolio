@@ -2,6 +2,8 @@
 
 A modern, interactive portfolio showcasing my travels around the world through stunning photography and immersive galleries.
 
+**[View Live Website](https://nfabugaisinaba.github.io/travels-portfolio/)**
+
 ## About
 
 This portfolio highlights my adventures across multiple continents, featuring curated photo collections from destinations including Japan, Italy, South Korea, Maine, and more. Each trip includes detailed galleries that capture the essence of these incredible places.

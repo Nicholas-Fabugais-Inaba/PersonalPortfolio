@@ -12,13 +12,33 @@ interface Trip {
   highlights: string[];
 }
 
-const trips: Trip[] = [
+// Dynamically import all gallery images from public folder using Vite's glob
+const globImages = import.meta.glob<{ default: string }>(
+  '/public/*/[!.]*.{jpg,jpeg,png}',
+  { eager: true }
+);
+
+// Build gallery object from glob results
+const buildGalleryImages = () => {
+  const galleries: Record<string, string[]> = {};
+
+  Object.entries(globImages).forEach(([path, module]) => {
+    const folderName = path.split('/')[2];
+    if (!galleries[folderName]) galleries[folderName] = [];
+    galleries[folderName].push(module.default);
+  });
+
+  return galleries;
+};
+
+const galleryImages = buildGalleryImages();
+
+const tripsData = [
   {
     id: 1,
     destination: 'Japan',
     galleryFolder: 'japan-gallery',
     years: [2025],
-    image: '/D485C125-2EA2-49CF-95A4-40072F916F1A.JPG',
     description: 'Visiting my first country in Asia with amazing food, culture, and history',
     highlights: ['Tokyo', 'Yokohama', 'Kyoto', 'Uji', 'Nara', 'Osaka', 'Kobe', 'Okayama', 'Hiroshima'],
   },
@@ -27,7 +47,6 @@ const trips: Trip[] = [
     destination: 'Italy',
     galleryFolder: 'italy-gallery',
     years: [2025],
-    image: '/5F1A7896-D3DE-4105-AFD1-8BEF259F100C_4_5005_c.jpeg',
     description: 'Incredible food, driving along the Amalfi coast, and watching Pope Leo XIV elected in person',
     highlights: ['Florence', 'Rome', 'Vatican City', 'Positano', 'Amalfi'],
   },
@@ -36,7 +55,6 @@ const trips: Trip[] = [
     destination: 'Seoul',
     galleryFolder: 'seoul-gallery',
     years: [2025],
-    image: '/54F90B1A-90E6-4A13-9B59-DC737A9546CD_1_201_a.jpeg',
     description: 'Roamed the streets of Myeongdong, learnt about the Korean war on the DMZ tour, and experienced a spa treatment',
     highlights: ['Myeongdong', 'DMZ', 'Namsan'],
   },
@@ -45,7 +63,6 @@ const trips: Trip[] = [
     destination: 'Philippines',
     galleryFolder: 'philippines-gallery',
     years: [2025],
-    image: '/4B9369B3-0E09-4461-B56D-E57B3235453C_1_201_a.jpeg',
     description: 'Island hopping in El Nido and swimming with whale sharks, sea turtles, and sardines in Oslob',
     highlights: ['Boracay', 'Cebu', 'El Nido', 'Manila', 'Oslob'],
   },
@@ -54,7 +71,6 @@ const trips: Trip[] = [
     destination: 'Maine',
     galleryFolder: 'maine-gallery',
     years: [2025],
-    image: '/35B2FD12-FD0F-4E28-9C50-84FF3B0009BE_1_105_c.jpeg',
     description: 'Solo road trip to see coastal towns and eat delicious lobster rolls',
     highlights: ['Cape Elizabeth', 'Old Orchard Beach', 'Portland'],
   },
@@ -63,7 +79,6 @@ const trips: Trip[] = [
     destination: 'Boston',
     galleryFolder: 'boston-gallery',
     years: [2025],
-    image: '/6EEF0E5D-0BD5-4519-AC01-A89549036A7C_1_105_c.jpeg',
     description: 'Walked the Harvard campus, watched the Red Sox at Fenway Park, and walked around the Boston Public Garden',
     highlights: ['Harvard', 'Fenway Park', 'Boston Public Garden'],
   },
@@ -72,7 +87,6 @@ const trips: Trip[] = [
     destination: 'Montreal',
     galleryFolder: 'montreal-gallery',
     years: [2025],
-    image: '/D341C46D-A7A0-497E-8BF6-9F58A13A786A_1_102_a.jpeg',
     description: 'Hiked Mont Royal, walked around Old Montreal and Downtown, and went on a food tour',
     highlights: ['Mont Royal', 'Little Italy', 'Old Montreal'],
   },
@@ -81,7 +95,6 @@ const trips: Trip[] = [
     destination: 'Punta Cana',
     galleryFolder: 'puntacana-gallery',
     years: [2025],
-    image: '/7D5058BF-D65F-4422-86C4-181C79AD86E5.JPG',
     description: 'All-inclusive vacation with friends and a full-day excursion to Scape Park',
     highlights: ['Scape Park', 'Riu Republica', 'Boat Party'],
   },
@@ -90,7 +103,6 @@ const trips: Trip[] = [
     destination: 'New York',
     galleryFolder: 'newyork-gallery',
     years: [2019, 2023, 2025],
-    image: '/83E6AA7D-621A-4D7D-82BD-0A8A8FB61C38_1_201_a.jpeg',
     description: 'The city that never sleeps - visiting friends and family throughout the years',
     highlights: ['Brooklyn', 'Manhattan', 'Jersey City'],
   },
@@ -99,7 +111,6 @@ const trips: Trip[] = [
     destination: 'Portugal',
     galleryFolder: 'portugal-gallery',
     years: [2024],
-    image: '/70524F64-83AC-468B-AF72-614BF8A5A28C_1_201_a.jpeg',
     description: 'Visited the Algarve, experienced a Port wine tour, and enjoyed beautiful beaches',
     highlights: ['Porto', 'Nazare', 'Peniche', 'Albufeira', 'Portimao', 'Lagos', 'Lisbon'],
   },
@@ -108,7 +119,6 @@ const trips: Trip[] = [
     destination: 'Amsterdam',
     galleryFolder: 'amsterdam-gallery',
     years: [2024],
-    image: '/CBB1BE6E-AB5E-4D92-BCD7-0B98C3493B2B.JPG',
     description: 'Windmills, museums, and relaxing beside the canals',
     highlights: ['Anne Frank House', 'Rijksmuseum', 'Canal Tour', 'Red Light District', 'Heineken Factory'],
   },
@@ -117,7 +127,6 @@ const trips: Trip[] = [
     destination: 'British Columbia',
     galleryFolder: 'britishcolumbia-gallery',
     years: [2023],
-    image: '/92881976-35EA-45F4-A648-E18B85EDCB77.JPG',
     description: 'Surfing in Tofino, breathtaking mountain landscapes, and attending my Japanese-side\'s family reunion',
     highlights: ['Tofino', 'Vancouver', 'Victoria'],
   },
@@ -126,11 +135,15 @@ const trips: Trip[] = [
     destination: 'Hawaii',
     galleryFolder: 'hawaii-gallery',
     years: [2022],
-    image: '/1A1D095E-95E3-464B-B15A-5239CA79F94B_1_102_a.jpeg',
     description: 'Driving the Road to Hana, watching the Haleakala sunrise, and relaxed on beautiful beaches',
     highlights: ['Oahu', 'Maui', 'Hana', 'Haleakala'],
   },
 ];
+
+const trips: Trip[] = tripsData.map((trip) => ({
+  ...trip,
+  image: galleryImages[trip.galleryFolder]?.[0] || '',
+}));
 
 const Trips = () => {
   const [selectedYear, setSelectedYear] = useState<number | 'all'>('all');

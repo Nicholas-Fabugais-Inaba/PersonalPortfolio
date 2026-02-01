@@ -2,6 +2,7 @@ import { X } from 'lucide-react';
 
 interface TripGalleryProps {
   destination: string;
+  galleryFolder: string;
   image: string;
   onClose: () => void;
 }
@@ -17,9 +18,9 @@ const buildGalleryImages = () => {
   const galleries: Record<string, string[]> = {};
 
   Object.entries(globImages).forEach(([path, module]) => {
-    const destination = path.split('/')[2]; // Extract destination folder name
-    if (!galleries[destination]) galleries[destination] = [];
-    galleries[destination].push(module.default);
+    const folderName = path.split('/')[2]; // Extract destination folder name
+    if (!galleries[folderName]) galleries[folderName] = [];
+    galleries[folderName].push(module.default);
   });
 
   return galleries;
@@ -27,8 +28,8 @@ const buildGalleryImages = () => {
 
 const galleryImages = buildGalleryImages();
 
-const TripGallery = ({ destination, image, onClose }: TripGalleryProps) => {
-  const images = galleryImages[destination] || [image];
+const TripGallery = ({ destination, galleryFolder, image, onClose }: TripGalleryProps) => {
+  const images = galleryImages[galleryFolder] || [image];
 
   return (
     <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-6">

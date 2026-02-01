@@ -5,6 +5,7 @@ import TripGallery from './TripGallery';
 interface Trip {
   id: number;
   destination: string;
+  galleryFolder: string;
   years: number[];
   image: string;
   description: string;
@@ -15,6 +16,7 @@ const trips: Trip[] = [
   {
     id: 1,
     destination: 'Japan',
+    galleryFolder: 'japan-gallery',
     years: [2025],
     image: '/D485C125-2EA2-49CF-95A4-40072F916F1A.JPG',
     description: 'Visiting my first country in Asia with amazing food, culture, and history',
@@ -23,6 +25,7 @@ const trips: Trip[] = [
   {
     id: 2,
     destination: 'Italy',
+    galleryFolder: 'italy-gallery',
     years: [2025],
     image: '/5F1A7896-D3DE-4105-AFD1-8BEF259F100C_4_5005_c.jpeg',
     description: 'Incredible food, driving along the Amalfi coast, and watching Pope Leo XIV elected in person',
@@ -31,6 +34,7 @@ const trips: Trip[] = [
   {
     id: 3,
     destination: 'Seoul',
+    galleryFolder: 'seoul-gallery',
     years: [2025],
     image: '/54F90B1A-90E6-4A13-9B59-DC737A9546CD_1_201_a.jpeg',
     description: 'Roamed the streets of Myeongdong, learnt about the Korean war on the DMZ tour, and experienced a spa treatment',
@@ -39,6 +43,7 @@ const trips: Trip[] = [
   {
     id: 4,
     destination: 'Philippines',
+    galleryFolder: 'philippines-gallery',
     years: [2025],
     image: '/4B9369B3-0E09-4461-B56D-E57B3235453C_1_201_a.jpeg',
     description: 'Island hopping in El Nido and swimming with whale sharks, sea turtles, and sardines in Oslob',
@@ -47,6 +52,7 @@ const trips: Trip[] = [
   {
     id: 5,
     destination: 'Maine',
+    galleryFolder: 'maine-gallery',
     years: [2025],
     image: '/35B2FD12-FD0F-4E28-9C50-84FF3B0009BE_1_105_c.jpeg',
     description: 'Solo road trip to see coastal towns and eat delicious lobster rolls',
@@ -55,6 +61,7 @@ const trips: Trip[] = [
   {
     id: 6,
     destination: 'Boston',
+    galleryFolder: 'boston-gallery',
     years: [2025],
     image: '/6EEF0E5D-0BD5-4519-AC01-A89549036A7C_1_105_c.jpeg',
     description: 'Walked the Harvard campus, watched the Red Sox at Fenway Park, and walked around the Boston Public Garden',
@@ -63,6 +70,7 @@ const trips: Trip[] = [
   {
     id: 7,
     destination: 'Montreal',
+    galleryFolder: 'montreal-gallery',
     years: [2025],
     image: '/D341C46D-A7A0-497E-8BF6-9F58A13A786A_1_102_a.jpeg',
     description: 'Hiked Mont Royal, walked around Old Montreal and Downtown, and went on a food tour',
@@ -71,6 +79,7 @@ const trips: Trip[] = [
   {
     id: 8,
     destination: 'Punta Cana',
+    galleryFolder: 'puntacana-gallery',
     years: [2025],
     image: '/7D5058BF-D65F-4422-86C4-181C79AD86E5.JPG',
     description: 'All-inclusive vacation with friends and a full-day excursion to Scape Park',
@@ -79,6 +88,7 @@ const trips: Trip[] = [
   {
     id: 9,
     destination: 'New York',
+    galleryFolder: 'newyork-gallery',
     years: [2019, 2023, 2025],
     image: '/83E6AA7D-621A-4D7D-82BD-0A8A8FB61C38_1_201_a.jpeg',
     description: 'The city that never sleeps - visiting friends and family throughout the years',
@@ -87,6 +97,7 @@ const trips: Trip[] = [
   {
     id: 10,
     destination: 'Portugal',
+    galleryFolder: 'portugal-gallery',
     years: [2024],
     image: '/70524F64-83AC-468B-AF72-614BF8A5A28C_1_201_a.jpeg',
     description: 'Visited the Algarve, experienced a Port wine tour, and enjoyed beautiful beaches',
@@ -95,6 +106,7 @@ const trips: Trip[] = [
   {
     id: 11,
     destination: 'Amsterdam',
+    galleryFolder: 'amsterdam-gallery',
     years: [2024],
     image: '/CBB1BE6E-AB5E-4D92-BCD7-0B98C3493B2B.JPG',
     description: 'Windmills, museums, and relaxing beside the canals',
@@ -103,6 +115,7 @@ const trips: Trip[] = [
   {
     id: 12,
     destination: 'British Columbia',
+    galleryFolder: 'britishcolumbia-gallery',
     years: [2023],
     image: '/92881976-35EA-45F4-A648-E18B85EDCB77.JPG',
     description: 'Surfing in Tofino, breathtaking mountain landscapes, and attending my Japanese-side\'s family reunion',
@@ -111,6 +124,7 @@ const trips: Trip[] = [
   {
     id: 13,
     destination: 'Hawaii',
+    galleryFolder: 'hawaii-gallery',
     years: [2022],
     image: '/1A1D095E-95E3-464B-B15A-5239CA79F94B_1_102_a.jpeg',
     description: 'Driving the Road to Hana, watching the Haleakala sunrise, and relaxed on beautiful beaches',
@@ -227,6 +241,7 @@ const Trips = () => {
       {selectedTrip && (
         <TripGallery
           destination={selectedTrip}
+          galleryFolder={trips.find((t) => t.destination === selectedTrip)?.galleryFolder || ''}
           image={trips.find((t) => t.destination === selectedTrip)?.image || ''}
           onClose={() => setSelectedTrip(null)}
         />

@@ -9,7 +9,7 @@ interface TripGalleryProps {
 
 // Dynamically import all gallery images from public folder using Vite's glob
 const globImages = import.meta.glob<{ default: string }>(
-  '/public/*/[!.]*',
+  '/public/*/[!.]*.{jpg,jpeg,png}',
   { eager: true }
 );
 
@@ -18,15 +18,9 @@ const buildGalleryImages = () => {
   const galleries: Record<string, string[]> = {};
 
   Object.entries(globImages).forEach(([path, module]) => {
-    const folderName = path.split('/')[2];
-    const fileName = path.split('/')[3];
-    const imageExtensions = ['.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG'];
-    const hasValidExtension = imageExtensions.some(ext => fileName?.toLowerCase().endsWith(ext.toLowerCase()));
-
-    if (hasValidExtension) {
-      if (!galleries[folderName]) galleries[folderName] = [];
-      galleries[folderName].push(module.default);
-    }
+    const folderName = path.split('/')[2]; // Extract destination folder name
+    if (!galleries[folderName]) galleries[folderName] = [];
+    galleries[folderName].push(module.default);
   });
 
   return galleries;

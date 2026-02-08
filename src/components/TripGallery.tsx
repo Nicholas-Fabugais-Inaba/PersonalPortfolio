@@ -17,7 +17,12 @@ const globImages = import.meta.glob<{ default: string }>(
 const buildGalleryImages = () => {
   const galleries: Record<string, string[]> = {};
 
-  Object.entries(globImages).forEach(([path, module]) => {
+  // Sort paths to ensure consistent ordering
+  const sortedEntries = Object.entries(globImages).sort(([pathA], [pathB]) =>
+    pathA.localeCompare(pathB)
+  );
+
+  sortedEntries.forEach(([path, module]) => {
     const folderName = path.split('/')[2]; // Extract destination folder name
     if (!galleries[folderName]) galleries[folderName] = [];
     galleries[folderName].push(module.default);

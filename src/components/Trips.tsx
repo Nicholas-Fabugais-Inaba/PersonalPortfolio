@@ -14,7 +14,7 @@ interface Trip {
 
 // Dynamically import all gallery images from public folder using Vite's glob
 const globImages = import.meta.glob<{ default: string }>(
-  '/public/*/[!.]*.{jpg,jpeg,png}',
+  '/public/*/[!.]*.{JPG,jpg,jpeg,png}',
   { eager: true }
 );
 

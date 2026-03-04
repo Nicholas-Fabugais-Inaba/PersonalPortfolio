@@ -1,4 +1,4 @@
-import { Linkedin, Instagram, Mail } from 'lucide-react';
+import { Linkedin, Instagram, Mail, Github } from 'lucide-react';
 
 const Contact = () => {
   const socialLinks = [
@@ -19,6 +19,12 @@ const Contact = () => {
       icon: Mail,
       url: 'mailto:nfabugaisinaba@gmail.com',
       color: 'hover:bg-green-600',
+    },
+    {
+      name: 'GitHub',
+      icon: Github,
+      url: 'https://github.com/Nicholas-Fabugais-Inaba',
+      color: 'hover:bg-gray-700',
     },
   ];
 
